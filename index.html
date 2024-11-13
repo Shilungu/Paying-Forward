@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EdTech Platform for Sustainable Urban Development</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <img src="/images/lg.jpg" alt="Platform Logo" class="logo rounded-circle">
+            <h1>EdTech</h1>
+        </div>
+        
+        <nav id="navbar">
+            <button onclick="scrollToSection('#courses')">Courses</button>
+            <button onclick="scrollToSection('#mentorship')">Mentorship</button>
+            <button onclick="scrollToSection('#city-model')">City Model Simulator</button>
+            <button onclick="scrollToSection('#contact')">Contact</button>
+        </nav>
+        <button class="toggle-menu" onclick="toggleMenu()">☰</button>
+    </header>
+<!-- Introduction Section -->
+<section id="intro">
+    <h2>Welcome to Our Platform</h2>
+    <p>
+        Discover the courses we offer and take your learning to the next level. 
+    </p>
+    <button class="btn-learn-more">Learn More</button>
+</section>
+
+<!-- Courses Section -->
+<section id="courses">
+    <h2>Available Courses</h2>
+    <div class="course-item">
+        <h3>Course 1: Web Development</h3>
+        <p>Learn how to build dynamic websites.</p>
+        <button class="btn-apply">Apply for Courses</button>
+    </div>
+    <div class="course-item">
+        <h3>Course 2: Data Science</h3>
+        <p>Explore the world of data and analytics.</p>
+        <button class="btn-apply">Apply for Courses</button>
+    </div>
+</section>
+
+<!-- Modal Structure -->
+<div id="applyModal" class="modal">
+    <div class="modal-content">
+        <h3>Apply for a Course</h3>
+        <form id="applyForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="course">Choose Course:</label>
+            <select id="course" name="course" required>
+                <option value="webdev">Web Development</option>
+                <option value="datascience">Data Science</option>
+            </select><br>
+            <button type="submit">Submit</button>
+        </form>
+        <button id="closeModal" class="close-modal">Close</button>
+    </div>
+</div>
+<!-- Modal Structure for Mentorship Application -->
+<div id="applyMentorshipModal" class="modal">
+    <div class="modal-content">
+        <h3>Apply for Mentorship</h3>
+        <form id="applyMentorshipForm">
+            <label for="mentor-name">Full Name:</label>
+            <input type="text" id="mentor-name" name="name" required><br>
+            <label for="mentor-email">Email:</label>
+            <input type="email" id="mentor-email" name="email" required><br>
+            <label for="mentorship-area">Mentorship Area:</label>
+            <select id="mentorship-area" name="mentorship-area" required>
+                <option value="webdev">Web Development</option>
+                <option value="datascience">Data Science</option>
+                <option value="ai">AI and Machine Learning</option>
+            </select><br>
+            <button type="submit">Submit</button>
+        </form>
+        <button id="closeMentorshipModal" class="close-modal">Close</button>
+    </div>
+</div>
+
+   <!-- City Model Simulator Section -->
+   <section id="city-model" class="fade-in">
+    <h2>City Model Simulator</h2>
+    <p>Create and simulate virtual sustainable city models based on smart city principles.</p>
+    
+    <div id="city-model-container">
+        <!-- 3D City Canvas -->
+        <canvas id="cityCanvas"></canvas>
+
+        <!-- Real-Time Metrics Control Panel -->
+        <div id="controls">
+            <h3>Simulation Controls</h3>
+            <label for="trafficDensity">Traffic Density:</label>
+            <input type="range" id="trafficDensity" min="0" max="100" value="50">
+            
+            <label for="populationDensity">Population Density:</label>
+            <input type="range" id="populationDensity" min="0" max="100" value="50">
+            
+            <label>
+                <input type="checkbox" id="greenSpace"> Expand Green Space
+            </label>
+        </div>
+
+        <!-- Metrics Display -->
+        <div id="metricsContainer"></div>
+    </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact" class="fade-in">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Sustainable Urban Development Platform. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
